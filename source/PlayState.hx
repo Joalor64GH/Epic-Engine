@@ -1090,13 +1090,13 @@ class PlayState extends MusicBeatState
 		add(scoreTxt);
 
 		versionTxt = new FlxText(0, FlxG.height - 24, 0, SONG.song + " - " +
-			CoolUtil.difficultyString() + " | ProjectFNF " +
+			CoolUtil.difficultyString() + " | Epic Engine " +
 			MainMenuState.projectFnfVersion, 16);
 		versionTxt.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		versionTxt.scrollFactor.set();
 		add(versionTxt);
 
-		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "BOTPLAY", 32);
+		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "NOOB", 32);
 		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		botplayTxt.scrollFactor.set();
 		botplayTxt.borderSize = 1.25;
@@ -2400,8 +2400,8 @@ class PlayState extends MusicBeatState
 		if (ClientPrefs.advancedScoreTxt) {
 			if (pressMisses > 0)
 				pressMissesTxt = ' (+' + pressMisses + ')';
-			thScoreHealthTxt = ' (' + thScore + ') | Health: ' + FlxMath.roundDecimal(healthPercentageDisplay, 0) + '%';
-			accuracyTxt = ' | Accuracy: ' + accuracyPercentage + '%';
+			thScoreHealthTxt = ' (' + thScore + ') - HP: ' + FlxMath.roundDecimal(healthPercentageDisplay, 0) + '%';
+			accuracyTxt = ' - Accuracy: ' + accuracyPercentage + '%';
 		}
 
 		if (cpuControlled) {
@@ -2413,7 +2413,7 @@ class PlayState extends MusicBeatState
 				scoreTxt.color = FlxColor.WHITE;
 		}
 
-		scoreTxt.text = 'Score: ' + songScore + thScoreHealthTxt + ' | Misses: ' + songMisses + pressMissesTxt + accuracyTxt + ' | Rating: ' + ratingFC + ratingName + suffix;
+		scoreTxt.text = 'Score: ' + songScore + thScoreHealthTxt + ' - Combo Breaks: ' + songMisses + pressMissesTxt + accuracyTxt + ' - Rank: ' + ratingFC + ratingName + suffix;
 
 		if(botplayTxt.visible) {
 			botplaySine += 180 * elapsed;
